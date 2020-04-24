@@ -1,0 +1,14 @@
+<h1>일기 내용 자세히 보기</h1>
+
+<div class="posts">
+    {% if post.pub_date %}
+        <div class="date">
+            {{ post.pub_date }}
+        </div>
+    {% endif %}
+    <h1>{{ post.title }}</h1>
+    <p>{{ post.body | linebreaks }}</p>
+</div>
+
+<a href="{% url 'edit' pk=post.pk %}">수정하기</a>
+<a href="{% url 'delete' pk=post.pk %}">삭제하기</a>
